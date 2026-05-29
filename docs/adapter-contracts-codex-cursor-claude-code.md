@@ -1,6 +1,6 @@
 # CAT Adapter Contracts: Codex, Cursor, Claude Code
 
-Version: `v2.1`
+Version: `v0.1`
 
 This document maps the agent-agnostic CAT spec to three coding-agent environments using a shared contract and runtime-specific adapter responsibilities.
 
@@ -32,8 +32,6 @@ emit_logs(adapter_handle, event) -> void
 ---
 
 ## 2) Codex adapter contract
-
-A first reference implementation exists at `adapters/codex_adapter.py`, and the runnable demo is documented in `docs/v2.1-productization.md`.
 
 ### Responsibilities
 

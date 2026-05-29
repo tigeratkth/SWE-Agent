@@ -1,7 +1,7 @@
 # Agent-Agnostic CAT Specification
 
-Version: `v2.0`
-Status: `Reference implementation available`
+Version: `v0.1`
+Status: `Public draft`
 
 This document defines the portable contract for implementing **Context as a Tool (CAT)** independently of any specific coding assistant runtime.
 
@@ -75,8 +75,7 @@ Responsibilities:
 should_compress(state) -> {
   decision: bool,
   reason_code: string,
-  confidence: float [0,1],
-  evidence_step_ids: integer[]
+  confidence: float [0,1]
 }
 ```
 
@@ -201,13 +200,7 @@ A runtime is spec-compliant if it passes:
 
 ---
 
-## 10) v2.0 reference implementation
-
-The repository includes a canonical Python implementation in `cat_core/`. v2.0 adds deterministic hashing, `CATConfig`, evidence-aware compression decisions, memory-delta validation, a full `run_cat_cycle` orchestration entry point, and JSONL logs. See `docs/v2-implementation-notes.md` for rationale and architecture.
-
----
-
-## 11) Versioning
+## 10) Versioning
 
 - Breaking interface changes increment major version.
 - Schema field additions increment minor version.

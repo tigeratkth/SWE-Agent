@@ -1,7 +1,5 @@
 # CAT Reproduction Kit
 
-**Current reference core:** Canonical CAT v2.1
-
 Agent-agnostic, production-ready starter kit to reproduce and share the **Context as a Tool (CAT)** methodology for long-horizon software engineering agents across **Codex, Cursor, and Claude Code**.
 
 > Reference paper: https://arxiv.org/pdf/2512.22087
@@ -42,27 +40,9 @@ The agent can explicitly call a **compressor tool** to update `M(t)` instead of 
 .
 ├── README.md
 ├── LICENSE
-├── pyproject.toml
-├── adapters/
-│   ├── base.py
-│   └── codex_adapter.py
-├── cat_core/
-│   ├── __init__.py
-│   ├── core.py
-│   ├── models.py
-│   └── storage.py
-├── examples/
-│   └── codex_trace_sample.jsonl
-├── scripts/
-│   └── cat_demo.py
-├── tests/
-│   └── test_cat_core.py
 └── docs/
     ├── agent-agnostic-cat-spec.md
-    ├── adapter-contracts-codex-cursor-claude-code.md
-    ├── canonical-cat-reference.md
-    ├── v2-implementation-notes.md
-    └── v2.1-productization.md
+    └── adapter-contracts-codex-cursor-claude-code.md
 ```
 
 ---
@@ -74,17 +54,10 @@ The agent can explicitly call a **compressor tool** to update `M(t)` instead of 
    - `docs/agent-agnostic-cat-spec.md`
 3. Pick your runtime and implement the adapter:
    - `docs/adapter-contracts-codex-cursor-claude-code.md`
-4. Run the product demo:
-
-   ```bash
-   python scripts/cat_demo.py \
-     --input examples/codex_trace_sample.jsonl \
-     --output runs/demo.cat.jsonl \
-     --state runs/demo.state.json
-   ```
-
-5. Read the v2.1 productization notes:
-   - `docs/v2.1-productization.md`
+4. Run one end-to-end task with:
+   - logging of `should_compress` decisions
+   - emitted `memory_delta`
+   - rebuilt context snapshots
 
 ---
 
@@ -115,29 +88,6 @@ A compliant implementation should produce:
 - [ ] Context rebuilt only through the canonical merge rules.
 - [ ] Baseline and CAT runs share identical task set and stopping criteria.
 - [ ] Results include both performance and cost/latency.
-
----
-
-## Canonical CAT v2.1
-
-The repository now provides a runnable product path: Codex-like trace input → adapter → CAT cycle → JSONL logs → persisted state.
-
-The `cat_core/` package provides the reference loop:
-
-- typed CAT state/configuration models,
-- rule-based compression triggers,
-- evidence-aware memory deltas,
-- schema/provenance validation,
-- deterministic context rebuilds,
-- optional JSONL observability logs,
-- persisted state through `cat_core.storage`,
-- a Codex-style adapter and `cat-demo` CLI.
-
-See:
-
-- `docs/canonical-cat-reference.md`
-- `docs/v2-implementation-notes.md`
-- `docs/v2.1-productization.md`
 
 ---
 
