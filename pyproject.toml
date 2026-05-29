@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cat-reproduction-kit"
+version = "2.1.0"
+description = "Canonical Context-as-a-Tool reference core, adapters, and demo CLI."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+  {name = "CAT Reproduction Kit maintainers"}
+]
+
+[project.scripts]
+cat-demo = "scripts.cat_demo:main"
+
+[tool.setuptools]
+packages = ["cat_core", "adapters", "scripts"]
+
+[tool.setuptools.package-data]
+cat_core = ["py.typed"]
+adapters = ["py.typed"]
