@@ -64,4 +64,4 @@ The goal of v2.0 is a stable public contract, not model performance. A learned t
 
 ## Next recommended milestone
 
-v2.1 should add one concrete adapter implementation, preferably Codex first, using `run_cat_cycle` as the integration point. After that, v2.2 can add an LLM-backed compressor that still emits the same `MemoryDelta` schema.
+v2.1 adds the first concrete adapter implementation, a demo CLI, sample trace, persisted state, and packaging. v2.2 can add an LLM-backed compressor that still emits the same `MemoryDelta` schema.

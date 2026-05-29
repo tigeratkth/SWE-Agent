@@ -68,7 +68,7 @@ def compress(
     state: CATState,
     slice_start: int | None = None,
     slice_end: int | None = None,
-    compressor_version: str = "canonical-cat-v2.0",
+    compressor_version: str = "canonical-cat-v2.1",
 ) -> MemoryDelta:
     events = state.trajectory[slice_start:slice_end]
     goals: list[str] = []

@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Literal
 
-CANONICAL_CAT_VERSION = "2.0"
+CANONICAL_CAT_VERSION = "2.1"
 MEMORY_BUCKETS = (
     "goals",
     "decisions",

@@ -10,6 +10,7 @@ from .core import (
     stable_hash,
     validate_memory_delta,
 )
+from .storage import load_state, save_state, state_from_dict
 from .models import (
     CANONICAL_CAT_VERSION,
     CATConfig,
@@ -42,4 +43,7 @@ __all__ = [
     "rebuild_context",
     "run_cat_cycle",
     "stable_hash",
+    "save_state",
+    "load_state",
+    "state_from_dict",
 ]

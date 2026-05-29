@@ -1,8 +1,8 @@
-# Canonical CAT Reference Implementation v2.0
+# Canonical CAT Reference Implementation v2.1
 
 This repository includes a runnable reference implementation of the canonical Context as a Tool (CAT) loop under `cat_core/`.
 
-## What v2.0 adds
+## What v2.0 added
 
 - Typed configuration through `CATConfig`.
 - Deterministic JSON-based hashing through `stable_hash`.
@@ -30,3 +30,10 @@ This repository includes a runnable reference implementation of the canonical Co
 ## Extension points
 
 This implementation is intentionally rule-based. Replace `should_compress` with a learned trigger or replace `compress` with an LLM summarizer while preserving the same input/output contracts. Adapter implementations should prefer `run_cat_cycle` when they want a complete reference loop and the lower-level functions when they need more control.
+
+## What v2.1 adds
+
+- A Codex-style adapter for raw tool/action JSON events.
+- A `cat-demo` CLI for running traces through the canonical cycle.
+- JSON state persistence through `cat_core.storage`.
+- A sample trace under `examples/` and package metadata in `pyproject.toml`.
